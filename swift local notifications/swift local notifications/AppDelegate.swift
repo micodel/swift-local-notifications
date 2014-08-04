@@ -17,19 +17,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         // Override point for customization after application launch.
         
+        
+     
+        
         // Actions
-        var firstAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
-        firstAction.identifier = "FIRST_ACTION"
-        firstAction.title = "First Action"
         
         // Background activation reloads some data but does not launch app.
         // Foreground activiation will launch app and show some data.
         
+        // FIRST ACTION
+        var firstAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        firstAction.identifier = "FIRST_ACTION"
+        firstAction.title = "First Action"
+    
         // This makes the firstAction a background activiation.
         firstAction.activationMode = UIUserNotificationActivationMode.Background
         // Will warn user with a red background.
         firstAction.destructive = true
         firstAction.authenticationRequired = false
+        
+        
+        // SECOND ACTION
+        var secondAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        secondAction.identifier = "SECOND_ACTION"
+        secondAction.title = "Second Action"
+        
+        // This makes the secondAction a foreground activiation.
+        secondAction.activationMode = UIUserNotificationActivationMode.Foreground
+        // Will warn user with a red background.
+        secondAction.destructive = false
+        secondAction.authenticationRequired = false
+        
+        
+        // THIRD ACTION
+        var thirdAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        thirdAction.identifier = "THIRD_ACTION"
+        thirdAction.title = "Third Action"
+        
+        // This makes the firstAction a background activiation.
+        thirdAction.activationMode = UIUserNotificationActivationMode.Background
+        // Will warn user with a red background.
+        thirdAction.destructive = true
+        thirdAction.authenticationRequired = false
+        
+        
+        
         
         
         let types:UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge
