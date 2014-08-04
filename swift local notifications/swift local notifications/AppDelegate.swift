@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      
         
         // Actions
+        // -------
         
         // Background activation reloads some data but does not launch app.
         // Foreground activiation will launch app and show some data.
@@ -61,6 +62,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         thirdAction.authenticationRequired = false
         
         
+        
+        
+        // Categories
+        // ----------
+        
+        var firstCategory:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        firstCategory.identifier = "FIRST_CATEGORY"
         
         
         
