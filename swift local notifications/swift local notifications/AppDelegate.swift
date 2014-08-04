@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let type:UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge
         
+        let mySettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
+        
         return true
     }
 
