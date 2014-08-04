@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // This makes the firstAction a background activiation.
         thirdAction.activationMode = UIUserNotificationActivationMode.Background
         // Will warn user with a red background.
-        thirdAction.destructive = true
+        thirdAction.destructive = false
         thirdAction.authenticationRequired = false
         
         
