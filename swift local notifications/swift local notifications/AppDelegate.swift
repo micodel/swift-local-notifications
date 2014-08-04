@@ -18,8 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Actions
+        var firstAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        firstAction.identifier = "FIRST_ACTION"
+        firstAction.title = "First Action"
         
+        // Background activation reloads some data but does not launch app.
+        // Foreground activiation will launch app and show some data.
         
+        // This makes the firstAction a background activiation.
+        firstAction.activationMode = UIUserNotificationActivationMode.Background
+        // Will warn user with a red background.
+        firstAction.destructive = true
+        firstAction.authenticationRequired = false
         
         
         let types:UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge
