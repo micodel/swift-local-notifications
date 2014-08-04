@@ -17,13 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         // Override point for customization after application launch.
         
+        // Actions
+        
+        
+        
+        
         let types:UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge
         
         let mySettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
         
         UIApplication.sharedApplication().registerUserNotificationSettings(mySettings)
         // At this point the user will be prompted, and asked if they would like to allow the app to use notifications.
-        
+        // You can retest this in the simuator by resetting Xcode simulator settings.
         
         return true
     }
