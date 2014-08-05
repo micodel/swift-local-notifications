@@ -76,6 +76,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         firstCategory.setActions(defaultActions, forContext: UIUserNotificationActionContext.Default)
         firstCategory.setActions(minimalActions, forContext: UIUserNotificationActionContext.Minimal)
         
+        //NSSet of all our categories.
+        
+        let categories:NSSet = NSSet(objects: firstCategory)
+        
+        
+        
         
         let types:UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge
         
