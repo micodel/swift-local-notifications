@@ -14,15 +14,27 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // Sets fire date for notification.
         var dateComp:NSDateComponents = NSDateComponents()
         dateComp.year = 2014;
         dateComp.month = 08;
         dateComp.day = 05;
         dateComp.hour = 2;
-        dateComp.minute = 45;
+        dateComp.minute = 59;
         dateComp.timeZone = NSTimeZone.systemTimeZone()
         
+        // Tells app to execute the fire date based on the internal device date, which is assumed to be utitilzing a Gregorian calandar.
+        var calendar:NSCalendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+        var date:NSDate = calendar.dateFromComponents(dateComp)
         
+        // Initialized local notification.
+        var notification:UILocalNotification = UILocalNotification()
+        // Will use one of the three actions in category depending on how its presented.
+        notification.category = "FIRST_CATEGORY"
+        notification.alertBody = "Hi, I am a notification."
+        notification.fireDate = date
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 
     override func didReceiveMemoryWarning() {
