@@ -399,6 +399,7 @@
 				F16BFB2B198F18F900D35838 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F16BFB2C198F18F900D35838 /* Build configuration list for PBXNativeTarget "swift local notificationsTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +408,7 @@
 				F16BFB2E198F18F900D35838 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

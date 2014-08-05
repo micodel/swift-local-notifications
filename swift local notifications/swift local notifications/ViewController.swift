@@ -23,18 +23,18 @@ class ViewController: UIViewController {
         dateComp.month = 08;
         dateComp.day = 05;
         dateComp.hour = 3;
-        dateComp.minute = 30;
+        dateComp.minute = 50;
         dateComp.timeZone = NSTimeZone.systemTimeZone()
         
         // Tells app to execute the fire date based on the internal device date, which is assumed to be utitilzing a Gregorian calandar.
-        var calendar:NSCalendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
-        var date:NSDate = calendar.dateFromComponents(dateComp)
+        var deviceCalendar:NSCalendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)
+        var date:NSDate = deviceCalendar.dateFromComponents(dateComp)
         
         // Initialized local notification.
         var notification:UILocalNotification = UILocalNotification()
         // Will use one of the three actions in category depending on how its presented.
         notification.category = "FIRST_CATEGORY"
-        notification.alertBody = "Hi, I am a notification."
+        notification.alertBody = "Hi, I am a notification"
         notification.fireDate = date
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
@@ -65,4 +65,10 @@ class ViewController: UIViewController {
 
 
 }
+
+
+
+
+
+
 
