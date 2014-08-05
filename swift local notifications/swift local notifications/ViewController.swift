@@ -22,8 +22,8 @@ class ViewController: UIViewController {
         dateComp.year = 2014;
         dateComp.month = 08;
         dateComp.day = 05;
-        dateComp.hour = 3;
-        dateComp.minute = 50;
+        dateComp.hour = 16;
+        dateComp.minute = 10;
         dateComp.timeZone = NSTimeZone.systemTimeZone()
         
         // Tells app to execute the fire date based on the internal device date, which is assumed to be utitilzing a Gregorian calandar.
@@ -40,8 +40,7 @@ class ViewController: UIViewController {
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
-    
-    
+ 
     func drawAShape(notification:NSNotification){
         var view:UIView = UIView(frame:CGRectMake(10, 10, 100, 100))
         view.backgroundColor = UIColor.redColor()
@@ -57,15 +56,13 @@ class ViewController: UIViewController {
         self.presentViewController(message, animated: true, completion: nil)
         
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
-
 
 
 
