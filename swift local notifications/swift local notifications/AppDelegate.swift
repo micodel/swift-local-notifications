@@ -67,12 +67,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Categories
         // ----------
         
-        var firstCategory:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        var firstCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
         firstCategory.identifier = "FIRST_CATEGORY"
         
         let defaultActions:NSArray = [firstAction, secondAction, thirdAction]
         let minimalActions:NSArray = [firstAction, secondAction]
         
+        firstCategory.setActions(defaultActions, forContext: UIUserNotificationActionContext.Default)
+        firstCategory.setActions(minimalActions, forContext: UIUserNotificationActionContext.Minimal)
         
         
         let types:UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge
