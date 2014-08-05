@@ -14,13 +14,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"drawAShape:", name: "actionOnePressed", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"showAMessage:", name: "actionTwoPressed", object: nil)
+        
         // Sets fire date for notification.
         var dateComp:NSDateComponents = NSDateComponents()
         dateComp.year = 2014;
         dateComp.month = 08;
         dateComp.day = 05;
-        dateComp.hour = 2;
-        dateComp.minute = 59;
+        dateComp.hour = 3;
+        dateComp.minute = 30;
         dateComp.timeZone = NSTimeZone.systemTimeZone()
         
         // Tells app to execute the fire date based on the internal device date, which is assumed to be utitilzing a Gregorian calandar.
@@ -35,6 +38,24 @@ class ViewController: UIViewController {
         notification.fireDate = date
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
+    
+    
+    
+    func drawAShape(notification:NSNotification){
+        var view:UIView = UIView(frame:CGRectMake(10, 10, 100, 100))
+        view.backgroundColor = UIColor.redColor()
+        
+        self.view.addSubview(view)
+        
+    }
+    
+    func showAMessage(notification:NSNotification){
+        var message:UIAlertController = UIAlertController(title: "A Notification Message", message: "Hello there", preferredStyle: UIAlertControllerStyle.Alert)
+        message.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        
+        self.presentViewController(message, animated: true, completion: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
